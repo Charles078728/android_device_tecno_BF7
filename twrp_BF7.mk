@@ -1,29 +1,28 @@
-#
-# Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2022 The Android Open Source Project
+# Copyright (C) 2022 SebaUbuntu's TWRP device tree generator
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit some common Twrp stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Inherit from BF7 device
 $(call inherit-product, device/tecno/BF7/device.mk)
 
+# Inherit some common twrp stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := BF7
 PRODUCT_NAME := twrp_BF7
-PRODUCT_BRAND := TECNO
+PRODUCT_BRAND := tecno
 PRODUCT_MODEL := TECNO BF7
-PRODUCT_MANUFACTURER := tecno
-
-PRODUCT_GMS_CLIENTID_BASE := android-tecno
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="vnd_bf7_h6127-user 12 SP1A.210812.016 651674 release-keys"
-
-BUILD_FINGERPRINT := TECNO/BF7/TECNO-BF7:12/SP1A.210812.016/240703V1812:user/release-keys
+PRODUCT_MANUFACTURER := Tecno
+PRODUCT_RELEASE_NAME := Tecno Spark Go 2023 (BF7
