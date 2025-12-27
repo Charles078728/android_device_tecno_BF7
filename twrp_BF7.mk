@@ -22,7 +22,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := BF7
 PRODUCT_NAME := twrp_BF7
-PRODUCT_BRAND := tecno
+PRODUCT_BRAND := Tecno
 PRODUCT_MODEL := TECNO BF7
 PRODUCT_MANUFACTURER := Tecno
 PRODUCT_RELEASE_NAME := Tecno Spark Go 2023 (BF7)
