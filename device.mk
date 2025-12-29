@@ -8,6 +8,26 @@
 LOCAL_PATH := device/tecno/BF7
 
 # A/B
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    gz \
+    lk \
+    logo \
+    md1img \
+    preloader \
+    product \
+    scp \
+    spmfw \
+    sspm \
+    system \
+    system_ext \
+    tee \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor \
+    vendor_boot
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -17,9 +37,16 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 30
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Health HAL
 PRODUCT_PACKAGES += \
