@@ -96,3 +96,6 @@ PLATFORM_VERSION := 16.1.0
 
 ## Inherit Partition Flags
 include device/tecno/BF7/partitions.mk
+
+#flags
+include device/tecno/BF7/TW_flags.mk
