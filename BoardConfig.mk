@@ -7,9 +7,6 @@
 
 DEVICE_PATH := device/tecno/BF7
 
-# For building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
-
 # A/B
 BOARD_USES_RECOVERY_AS_BOOT := true 
 
