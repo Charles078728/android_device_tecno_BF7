@@ -9,6 +9,7 @@ RELAX_USES_LIBRARY_CHECK=true
 
 # TWRP Configuration
 TW_EXTRA_LANGUAGES := false
+TW_THEME := portrait_hdpi
 TW_NO_USB_STORAGE := true
 TW_EXCLUDE_MTP := true
 TW_NO_EXFAT := true
